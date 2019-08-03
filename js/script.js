@@ -58,6 +58,7 @@ $(document).ready(function () {
     // Al cerrar la ventana, limpia y pone el foco en el cuadro
     $('#ventana').on('hidden.bs.modal', function (e) {
         $("#traduccion").val('').focus();
+        $("#icono").attr("alt", "icono");
         $("#clave").empty();
         $("#respuesta").empty();
         $("#valor").empty();
@@ -78,12 +79,14 @@ $(document).ready(function () {
             }
             $("#respuesta").text(i);
             $("#icono").attr("src", "img/warning.svg");
+            $("#icono").attr("alt", "Ummm");
             $("#ventana").modal('show');
             $("#txt5").focus();
         } else {
             respuesta = respuesta.trim();
             if (respuesta == valor) {
                 $("#icono").attr("src", "img/check.svg");
+                $("#icono").attr("alt", "OK");
             } else {
                 if (!conmuta) {
                     i = "Debió decir: ";
@@ -91,6 +94,7 @@ $(document).ready(function () {
                     i = "Deveria ter dito: ";
                 }
                 $("#icono").attr("src", "img/circle-x.svg");
+                $("#icono").attr("alt", "Error");
                 $("#valor").html(i + "<b>" + valor + "</b>");
             }
             $("#clave").text(clave);
