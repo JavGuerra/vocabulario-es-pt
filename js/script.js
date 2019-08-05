@@ -31,6 +31,8 @@ $(document).ready(function () {
         }
     }
     ld = claves.length;
+    // inicializa el conmutador por si se recarga la página
+    $("#conmutador").prop("checked", false);
     // Inicia el texto de la interfaz
     ponerTexto();
 
