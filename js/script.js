@@ -59,11 +59,14 @@ $(document).ready(function () {
 
     // Al cerrar la ventana, limpia y pone el foco en el cuadro
     $('#ventana').on('hidden.bs.modal', function (e) {
-        $("#traduccion").val('').focus();
+        // Limpia la ventana tras cerrarse
         $("#icono").attr("alt", "icono");
         $("#clave").empty();
         $("#respuesta").empty();
         $("#valor").empty();
+        // Inicia una nueva traducción
+        nuevaTraduccion();
+        $("#traduccion").val('').focus();
         $('#txt3').prop("disabled", false);
     });
 
@@ -101,8 +104,8 @@ $(document).ready(function () {
             }
             $("#clave").text(clave);
             $("#respuesta").text(respuesta);
+            // Muestra la ventana de resultado
             $("#ventana").modal('show');
-            nuevaTraduccion();
         }
     }
 
