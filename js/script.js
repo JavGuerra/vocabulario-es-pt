@@ -14,7 +14,7 @@ $(document).ready(function () {
         "Vocabulario": "Vocabulário",
         "Escriba en portugués:": "Escreva em espanhol:",
         "Comprobar": "Cheque",
-        "Cambiar para traducir del portugués al español": "Alterar para traduzir do espanhol para o português",
+        "Alterar para traduzir do português para o espanhol": "Cambiar para traducir del español al portugués",
         "Aceptar": "Aceitar"
     };
     var aleatorio = 0; // contiene el número aleatorio
