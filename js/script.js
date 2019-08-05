@@ -59,13 +59,14 @@ $(document).ready(function () {
 
     // Al cerrar la ventana, limpia y pone el foco en el cuadro
     $('#ventana').on('hidden.bs.modal', function (e) {
-        // Limpia la ventana tras cerrarse
+        // ¿Una nueva traducción?
+        if ($("#icono").attr("alt") != "Ops...") nuevaTraduccion();
+        // Limpia los datos de la ventana tras cerrarse
         $("#icono").attr("alt", "icono");
         $("#clave").empty();
         $("#respuesta").empty();
         $("#valor").empty();
-        // Inicia una nueva traducción
-        nuevaTraduccion();
+        // Pone el foco y activa el botón
         $("#traduccion").val('').focus();
         $('#txt3').prop("disabled", false);
     });
@@ -76,6 +77,7 @@ $(document).ready(function () {
     // Comprueba si la respuesta dada es correcta
     function comprobar() {
         respuesta = $("#traduccion").val();
+        // ¿Respuesta vacía o sólo con espacios?
         if (respuesta == null || respuesta.length == 0 || /^\s*$/.test(respuesta)) {
             if (!conmuta) {
                 i = "No hay nada escrito";
@@ -84,15 +86,15 @@ $(document).ready(function () {
             }
             $("#respuesta").text(i);
             $("#icono").attr("src", "img/warning.svg");
-            $("#icono").attr("alt", "Ummm");
-            $("#ventana").modal('show');
-            $("#txt5").focus();
+            $("#icono").attr("alt", "Ops...");
         } else {
             respuesta = respuesta.trim();
             if (respuesta == valor) {
+                // Si respuesta correcta...
                 $("#icono").attr("src", "img/check.svg");
                 $("#icono").attr("alt", "OK");
             } else {
+                // Si respuesta errónea...
                 if (!conmuta) {
                     i = "Debió decir: ";
                 } else {
@@ -104,9 +106,9 @@ $(document).ready(function () {
             }
             $("#clave").text(clave);
             $("#respuesta").text(respuesta);
-            // Muestra la ventana de resultado
-            $("#ventana").modal('show');
         }
+        // Muestra la ventana de resultado
+        $("#ventana").modal('show');
     }
 
 
