@@ -11,27 +11,9 @@
     <meta name="license" content="CC-BY" />
     <meta name="date" content="2019-08-03" scheme="YYYY-MM-DD" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <style>
-        body {
-            background-color: whitesmoke;
-        }
-
-        #caja {
-            background-color: white;
-            box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
-        }
-
-        #icono {
-            vertical-align: text-bottom;
-        }
-
-        .sin-borde {
-            border: none;
-        }
-    </style>
 </head>
 
-<body>
+<body class="bg-light">
     <div class="text-right m-1">
         <a href="https://github.com/JavGuerra/vocabulario-es-pt">
             <img src="img/Octicons-mark-github.svg" alt="Repositorio en GitHub" height="16px" width="16px" />
@@ -40,10 +22,10 @@
 
     <div class="container">
 
-        <div id="caja" class="col-md-10 col-lg-6 mt-sm-1 mt-md-3 mt-lg-5 mx-auto border rounded">
+        <div id="caja" class="col-md-10 col-lg-6 mt-sm-1 mt-md-3 mt-lg-5 mx-auto shadow-sm bg-white border rounded">
             <h1 id="txt1" class="text-center text-primary pt-3 mb-0">Vocabulario</h1>
-            <div class="row">
-                <form class="mt-2 ml-4 mr-4 mb-4 d-inline w-100">
+            <div class="row mt-2 mb-4 mx-3">
+                <form class="w-100">
                     <p id="txt2" class="text-center text-secondary">Escriba en portugués:</p>
                     <div class="form-group">
                         <label for="traduccion" id="palabra" class="h4">&nbsp;</label>
@@ -64,7 +46,7 @@
     <div class="modal fade" role="dialog" id="ventana">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header sin-borde">
+                <div class="modal-header border-0">
                     <h5 class="modal-title" id="clave"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="cerrar">
                         <span aria-hidden="true">&times;</span>
@@ -72,13 +54,13 @@
                 </div>
                 <div class="modal-body">
                     <p class="text-center">
-                        <img id="icono" src="img/warning.svg" alt="icono" height="28px" width="28px" />
+                        <img id="icono" src="img/warning.svg" alt="icono" class="align-text-bottom" height="28px" width="28px" />
                         <span>&nbsp;</span>
                         <span id="respuesta" class="h4"></span>
                     </p>
                     <p class="text-center"><span id="valor"></span></p>
                 </div>
-                <div class="modal-footer sin-borde">
+                <div class="modal-footer border-0">
                     <button type="button" class="btn btn-primary" data-dismiss="modal" id="txt5">Aceptar</button>
                 </div>
             </div>
@@ -92,4 +74,6 @@
     <noscript>
         <p class="text-center text-danger mb-5">La aplicación no funcionará porque su navegador no soporta JavaScript.</p>
     </noscript>
-</body></html>
+</body>
+
+</html>
