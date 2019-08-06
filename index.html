@@ -25,7 +25,7 @@
             vertical-align: text-bottom;
         }
 
-        .no-border {
+        .sin-borde {
             border: none;
         }
 
@@ -33,7 +33,7 @@
 </head>
 
 <body>
-    <div class="text-right p-2">
+    <div class="text-right m-1">
         <a href="https://github.com/JavGuerra/vocabulario-es-pt">
             <img src="img/Octicons-mark-github.svg" alt="Repositorio en GitHub" height="16px" width="16px" />
         </a>
@@ -41,7 +41,7 @@
 
     <div class="container">
 
-        <div id="caja" class="col-md-10 col-lg-6 mx-auto mt-3 border rounded">
+        <div id="caja" class="col-md-10 col-lg-6 mt-sm-1 mt-md-3 mt-lg-5 mx-auto border rounded">
             <h1 id="txt1" class="text-center text-primary pt-3 mb-0">Vocabulario</h1>
             <div class="row">
                 <form class="mt-2 ml-4 mr-4 mb-4 d-inline w-100">
@@ -56,8 +56,8 @@
         </div>
 
         <div class="custom-control custom-switch text-center mt-4">
-            <input type="checkbox" class="custom-control-input" id="conmutador">
-            <label class="custom-control-label text-secondary" for="conmutador" id="txt4">Alterar para traduzir do português para o espanhol</label>
+            <input type="checkbox" class="custom-control-input text-left" id="conmutador">
+            <label class="custom-control-label text-secondary text-left" for="conmutador" id="txt4">Alterar para traduzir do português para o espanhol</label>
         </div>
 
     </div>
@@ -65,7 +65,7 @@
     <div class="modal fade" role="dialog" id="ventana">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header no-border">
+                <div class="modal-header sin-borde">
                     <h5 class="modal-title" id="clave"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="cerrar">
                         <span aria-hidden="true">&times;</span>
@@ -79,7 +79,7 @@
                     </p>
                     <p class="text-center"><span id="valor"></span></p>
                 </div>
-                <div class="modal-footer no-border">
+                <div class="modal-footer sin-borde">
                     <button type="button" class="btn btn-primary" data-dismiss="modal" id="txt5">Aceptar</button>
                 </div>
             </div>
