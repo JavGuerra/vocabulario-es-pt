@@ -1,22 +1,17 @@
+// v.0.2
+
 $(document).ready(function () {
 
     // Variables
 
-    // conmuta si false = español al inicio
-    // conmuta si true = portugués al inicio
+    // conmuta: false = lang1 al inicio
+    // conmuta: true = lang2 al inicio
     var conmuta = false;
     var respuesta = ""; // contiene la respuesta recibida
     var claves = []; // contiene las claves del diccionario
     // var clave contiene la clave aleatoria
     var valor = ""; // contiene el valor de la clave
     // var diccionario contiene el diccionario de palabras
-    var idioma = { // contiene las traducciones de la interfaz
-        "Vocabulario": "Vocabulário",
-        "Escriba en portugués:": "Escreva em espanhol:",
-        "Comprobar": "Cheque",
-        "Alterar para traduzir do português para o espanhol": "Cambiar para traducir del español al portugués",
-        "Aceptar": "Aceitar"
-    };
     var aleatorio = 0; // contiene el número aleatorio
     var ld = 0; // contiene la longitud de diccionario
     var i = 1; // para iteraciones y apoyo
@@ -34,7 +29,7 @@ $(document).ready(function () {
     // inicializa el conmutador por si se recarga la página
     $("#conmutador").prop("checked", false);
     // Inicia el texto de la interfaz
-    ponerTexto();
+    ponerTextoInterfaz();
 
 
     // Eventos
@@ -49,7 +44,7 @@ $(document).ready(function () {
     // Al pulsar el checkbox...
     $('#conmutador').click(function (e) {
         conmuta = !conmuta; // swich
-        ponerTexto();
+        ponerTextoInterfaz();
     });
 
     // Al abrir la ventana, pone el foco en el botón
@@ -80,49 +75,54 @@ $(document).ready(function () {
         // ¿Respuesta vacía o sólo con espacios?
         if (respuesta == null || respuesta.length == 0 || /^\s*$/.test(respuesta)) {
             if (!conmuta) {
-                i = "No hay nada escrito";
+                i = nada1;
             } else {
-                i = "Não há nada escrito";
+                i = nada2;
             }
             $("#respuesta").text(i);
             $("#icono").attr("src", "img/warning.svg");
             $("#icono").attr("alt", "Ops...");
         } else {
             respuesta = respuesta.trim();
-            if (respuesta == valor) {
+            // Si desea comprobar literalmente, debe usar la siguiente línea:
+            // if (respuesta == valor) {
+            // En la línea siguiente no toma en cuenta mayúsculas y minúsciulas
+            if (respuesta.toLowerCase() == valor.toLowerCase()) {
                 // Si respuesta correcta...
                 $("#icono").attr("src", "img/check.svg");
                 $("#icono").attr("alt", "OK");
             } else {
                 // Si respuesta errónea...
                 if (!conmuta) {
-                    i = "Debió decir: ";
+                    i = debio1;
                 } else {
-                    i = "Deveria ter dito: ";
+                    i = debio2;
                 }
                 $("#icono").attr("src", "img/circle-x.svg");
                 $("#icono").attr("alt", "Error");
                 $("#valor").html(i + "<b>" + valor + "</b>");
             }
             $("#clave").text(clave);
-            $("#respuesta").text(respuesta);
+            $("#respuesta").text(valor);
         }
         // Muestra la ventana de resultado
         $("#ventana").modal('show');
     }
 
 
-    // Pone el texto de la interfaz en el idioma correcto
-    function ponerTexto() {
+    // Pone la interfaz en el idioma correcto
+    function ponerTextoInterfaz() {
         i = 1;
         if (!conmuta) {
-            for (var clave in idioma) {
+            $("html").attr("lang", lang1);
+            for (var clave in interfaz) {
                 $("#txt" + i).text(clave);
                 i++;
             }
         } else {
-            for (var clave in idioma) {
-                $("#txt" + i).text(idioma[clave]);
+            $("html").attr("lang", lang2);
+            for (var clave in interfaz) {
+                $("#txt" + i).text(interfaz[clave]);
                 i++;
             }
         }
