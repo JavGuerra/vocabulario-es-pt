@@ -83,6 +83,7 @@ $(document).ready(function () {
             $("#icono").attr("src", "img/warning.svg");
             $("#icono").attr("alt", "Ops...");
         } else {
+            $("#clave").text(clave);
             respuesta = respuesta.trim();
             // Si desea comprobar literalmente, debe usar la siguiente línea:
             // if (respuesta == valor) {
@@ -91,6 +92,7 @@ $(document).ready(function () {
                 // Si respuesta correcta...
                 $("#icono").attr("src", "img/check.svg");
                 $("#icono").attr("alt", "OK");
+                $("#respuesta").text(valor);
             } else {
                 // Si respuesta errónea...
                 if (!conmuta) {
@@ -100,10 +102,9 @@ $(document).ready(function () {
                 }
                 $("#icono").attr("src", "img/circle-x.svg");
                 $("#icono").attr("alt", "Error");
+                $("#respuesta").text(respuesta);
                 $("#valor").html(i + "<b>" + valor + "</b>");
             }
-            $("#clave").text(clave);
-            $("#respuesta").text(valor);
         }
         // Muestra la ventana de resultado
         $("#ventana").modal('show');
