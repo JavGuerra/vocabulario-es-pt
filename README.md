@@ -20,5 +20,5 @@ Para su uso con otros idiomas deberá editar dos ficheros:
 
 - 2019-08-03 v.0.1 javguerra
 - 2019-09-07 v.0.2 javguerra
-    Realizados cambios para poder usar la herramienta con otros idiomas. Ver fichero idioma.js
-    Ahora realiza la comprobación de la respuesta sin tener en cuenta myúsculas y minúsculas.
+    - Realizados cambios para poder usar la herramienta con otros idiomas. Ver fichero idioma.js
+    - Ahora realiza la comprobación de la respuesta sin tener en cuenta myúsculas y minúsculas.
