@@ -2,16 +2,19 @@
 <html lang="es">
 
 <head>
+   
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>español/português</title>
-    <meta name="description" content="Herramienta web para aprender vocabulario español y portugués" />
-    <meta name="keywords" content="idiomas, test, ejercicio, repaso, estudio, azar, aleatorio, formulario" />
+    <title>Vocabulario</title>
+    <meta name="description" content="Herramienta web para aprender vocabulario" />
+    <meta name="keywords" content="idiomas, test, ejercicio, repaso, estudio, aleatorio" />
     <meta name="author" content="Javier Guerra" />
     <meta name="license" content="CC-BY" />
     <meta name="date" content="2019-08-03" scheme="YYYY-MM-DD" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    
 </head>
+
 
 <body class="bg-light">
     <div class="text-right m-1">
@@ -26,7 +29,7 @@
             <h1 id="txt1" class="text-center text-primary pt-3 mb-0">Vocabulario</h1>
             <div class="row mt-2 mb-4 mx-3">
                 <form class="w-100">
-                    <p id="txt2" class="text-center text-secondary">Escriba en portugués:</p>
+                    <p id="txt2" class="text-center text-secondary">Escriba:</p>
                     <div class="form-group">
                         <label for="traduccion" id="palabra" class="h4">&nbsp;</label>
                         <input type="text" class="form-control" id="traduccion" autocomplete="off" />
@@ -38,7 +41,7 @@
 
         <div class="custom-control custom-switch text-center mt-4 mb-5">
             <input type="checkbox" class="custom-control-input text-left" id="conmutador">
-            <label class="custom-control-label text-secondary text-left" for="conmutador" id="txt4">Alterar para traduzir do português para o espanhol</label>
+            <label class="custom-control-label text-secondary text-left" for="conmutador" id="txt4">Intercambiar el idioma</label>
         </div>
 
     </div>
@@ -70,10 +73,13 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="diccionario.js"></script>
+    <script src="js/idioma.js"></script>
     <script src="js/script.js"></script>
+    
     <noscript>
         <p class="text-center text-danger mb-5">La aplicación no funcionará porque su navegador no soporta JavaScript.</p>
     </noscript>
+    
 </body>
 
 </html>
