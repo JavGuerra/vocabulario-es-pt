@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-   
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Vocabulario</title>
@@ -12,13 +12,13 @@
     <meta name="license" content="CC-BY" />
     <meta name="date" content="2019-08-03" scheme="YYYY-MM-DD" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    
+
 </head>
 
 
 <body class="bg-light">
 
-    <div class="text-right m-1">
+    <div class="float-right p-3">
         <a href="https://github.com/JavGuerra/vocabulario-es-pt">
             <img src="img/Octicons-mark-github.svg" alt="Repositorio en GitHub" height="16px" width="16px" />
         </a>
@@ -26,23 +26,27 @@
 
     <div class="container">
 
-        <div id="caja" class="col-md-10 col-lg-6 mt-sm-1 mt-md-3 mt-lg-5 mx-auto shadow-sm bg-white border rounded">
-            <h1 id="txt1" class="text-center text-primary pt-3 mb-0">Vocabulario</h1>
-            <div class="row mt-2 mb-4 mx-3">
-                <form class="w-100">
-                    <p id="txt2" class="text-center text-secondary">Escriba:</p>
-                    <div class="form-group">
-                        <label for="traduccion" id="palabra" class="h4">&nbsp;</label>
-                        <input type="text" class="form-control" id="traduccion" autocomplete="off" />
-                    </div>
-                    <button type="submit" class="btn btn-primary mt-2" id="txt3">Comprobar</button>
-                </form>
-            </div>
-        </div>
+        <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
 
-        <div class="custom-control custom-switch text-center mt-4 mb-5">
-            <input type="checkbox" class="custom-control-input text-left" id="conmutador">
-            <label class="custom-control-label text-secondary text-left" for="conmutador" id="txt4">Intercambiar el idioma</label>
+            <div id="caja" class="col-md-10 col-lg-6 mt-3 bg-white shadow-sm border rounded">
+                <h1 id="txt1" class="text-center text-primary pt-3 mb-0">Vocabulario</h1>
+                <div class="row mt-2 mb-4 mx-3">
+                    <form class="w-100">
+                        <p id="txt2" class="text-center text-secondary">Escriba:</p>
+                        <div class="form-group">
+                            <label for="traduccion" id="palabra" class="h4">&nbsp;</label>
+                            <input type="text" class="form-control" id="traduccion" autocomplete="off" />
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-2" id="txt3">Comprobar</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="custom-control custom-switch text-center mt-4 mb-4">
+                <input type="checkbox" class="custom-control-input text-left" id="conmutador">
+                <label class="custom-control-label text-secondary text-left" for="conmutador" id="txt4">Intercambiar el idioma</label>
+            </div>
+
         </div>
 
     </div>
@@ -76,11 +80,9 @@
     <script src="diccionario.js"></script>
     <script src="js/idioma.js"></script>
     <script src="js/script.js"></script>
-    
+
     <noscript>
         <p class="text-center text-danger mb-5">La aplicación no funcionará porque su navegador no soporta JavaScript.</p>
     </noscript>
-    
-</body>
 
-</html>
+</body></html>
